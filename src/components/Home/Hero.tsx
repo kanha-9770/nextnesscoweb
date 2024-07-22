@@ -66,15 +66,15 @@ const Hero: React.FC = () => {
 
   return (
     <div className="relative bg-[#f5f5f5] flex flex-col items-center  rounded-lg overflow-hidden min-h-screen w-full">
-      <div className="relative sm:p-8 md:p-2  w-full flex-wrap">
+      <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <div
-          className="relative w-screen md:mt-12 h-[calc(100vh-150px)]  sm:h-[calc(100vh-220px)] rounded-2xl"
+          className="relative w-full md:mt-[3.25rem] h-[calc(100vh-150px)]  sm:h-[calc(100vh-220px)] rounded-2xl"
           ref={videoRef}
         >
           {isVideoLoaded ? (
             <video
               id="background-video"
-              className="w-full h-full pb-2 object-cover rounded-2xl"
+              className="w-full h-full object-cover rounded-2xl"
               autoPlay
               loop
               muted
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="absolute bg-[#f5f5f5] border-2 rounded-3xl px-4 p-0 flex items-center bottom-0 left-8 sm:bottom-10 sm:left-10 md:bottom-20 md:left-20">
           <span className="mr-2">Get a Quote</span>
-          <button className="relative z-10 p-0 text-4xl h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all hover:text-white hover:bg-black">
+          <button className="relative mr-[-0.8rem] right-0  z-10 p-1 text-4xl h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all hover:text-white hover:bg-black">
             <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-300 group-hover:translate-x-full group-hover:w-0 group-hover:bg-black group-hover:text-white">
               <MdKeyboardArrowRight />
             </span>
@@ -105,7 +105,6 @@ const Hero: React.FC = () => {
           <h4 className="text-2xl mx-2 sm:text-3xl md:text-2xl lg:text-4xl font-poppins font-thin">
             FOOD PACKING MACHINES
           </h4>
-
           <Image
             src={Manufacturing}
             alt="Manufacturing Image"

@@ -9,11 +9,9 @@ import ProductLayout from "../Layout/ProductLayout";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/assets/Logo.png";
-import CountryLayout from "../Layout/CountryLayout";
-import AccountLayout from "../Layout/AccountLayout";
-import ProfileLayout from "../Layout/ProfileLayout";
-import SearchBarLayout from "../Layout/SearchBarLayout";
-
+import RightNavbar from "./RightNavbar";
+import ApplicationPage from "../Layout/ApplicationLayout";
+import SolutionLayout from "../Layout/Solution";
 export default function NavbarDemo() {
   return (
     <div className="relative flex items-center justify-center">
@@ -45,7 +43,7 @@ function Navbar({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <div className="w-[55%]">
+      <div className="w-[55%] z-50 flex mb-2 items-center justify-center">
         <Menu setActive={setActive}>
           <MenuItem setActive={setActive} active={active} item="About">
             <AboutLayout />
@@ -58,14 +56,10 @@ function Navbar({ className }: { className?: string }) {
             />
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Application">
-            <ProductLayout
-              setHoveredItem={() => {}}
-              setHeading={() => {}}
-              setIsVisible={() => {}}
-            />
+            <ApplicationPage/>
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Solution">
-            <ProductLayout
+            <SolutionLayout
               setHoveredItem={() => {}}
               setHeading={() => {}}
               setIsVisible={() => {}}
@@ -82,7 +76,7 @@ function Navbar({ className }: { className?: string }) {
             <SupportLayout
               setHoveredItem={() => {}}
               supporItem={supporItem}
-              type={""}
+              type={"Resources"}
             />
           </MenuItem>
           <MenuItem
@@ -92,24 +86,8 @@ function Navbar({ className }: { className?: string }) {
           ></MenuItem>
         </Menu>
       </div>
-      <div className="w-1/5 gap-2 flex flex-row items-center justify-center">
-        <MenuItem setActive={setActive} active={active} item="countryLayout">
-          <CountryLayout />
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="searchLayout">
-          <SearchBarLayout />
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="profileLayout">
-          <ProfileLayout />
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="userLayout">
-          <AccountLayout />
-        </MenuItem>
-        <MenuItem
-          setActive={setActive}
-          active={active}
-          item="contact"
-        ></MenuItem>
+      <div className="w-1/5 gap-2 flex items-center justify-end">
+        <RightNavbar />
       </div>
     </div>
   );

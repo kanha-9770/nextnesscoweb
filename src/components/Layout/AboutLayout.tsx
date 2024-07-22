@@ -58,7 +58,7 @@ const AboutLayout = () => {
   return (
     <div
       ref={containerRef}
-      className="flex w-[98vw] flex-col md:flex-row items-center justify-center border-b-2 rounded-xl pb-8 h-full px-2 md:px-4"
+      className="flex w-[98vw] flex-col md:flex-row items-center justify-center  rounded-xl pb-8 h-full px-2 md:px-4"
     >
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-screen-lg">
         {titlesWithImages.map((item, index) => (

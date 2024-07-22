@@ -7,6 +7,7 @@ import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
 } from "react-icons/md";
+import Link from "next/link";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;
@@ -63,22 +64,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
     );
   };
 
-  const handleMouseLeave = useCallback(
-    (e: MouseEvent) => {
-      const container = containerRef.current;
-      if (container) {
-        const rect = container.getBoundingClientRect();
-        if (e.clientY >= rect.bottom) {
-          setHoveredCategory("");
-          setCurrentIndex(0);
-          setHoveredItem(null);
-          setHeading(null);
-          setIsVisible(true);
-        }
-      }
-    },
-    [setHoveredItem, setHeading, setIsVisible]
-  );
+  const handleMouseLeave = useCallback(() => {
+    setHoveredCategory("");
+    setCurrentIndex(0);
+    setHoveredItem(null);
+    setHeading(null);
+    setIsVisible(true);
+  }, [setHoveredItem, setHeading, setIsVisible]);
 
   useEffect(() => {
     const containerElement = containerRef.current;
@@ -99,7 +91,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] z-30 md:h-full bg-white p-6 border-b-2 rounded-xl flex flex-col justify-center items-center font-medium"
+      className="w-[98vw] z-30 md:h-full p-6  rounded-xl flex flex-col justify-center items-center font-medium"
     >
       <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
         <div className="flex h-full justify-center items-center w-full md:w-3/4 relative">
@@ -141,12 +133,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       {machine.name}
                     </h3>
                     <div className="flex justify-center mt-2 space-x-2">
-                      <a
-                        href={`${machine.name}`}
-                        className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
-                      >
-                        Book Now
-                      </a>
+                        <a 
+                        href={`/products/${machine.name}`}
+                          onClick={() => handleMouseLeave()}
+                          className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
+                        >
+                          Book Now
+                        </a>
                     </div>
                   </div>
                 ))
@@ -181,9 +174,10 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                         {machine.name}
                       </h1>
                       <div className="flex justify-center pt-4 space-x-4 mt-2">
-                        <a
-                          href={`${machine.name}`}
-                          className="primary-button relative z-20"
+                      <a 
+                        href={`/products/${machine.name}`}
+                          onClick={() => handleMouseLeave()}
+                          className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
                         >
                           Book Now
                         </a>
@@ -231,7 +225,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       : "text-black"
                   }`}
                 >
-                  <MdKeyboardArrowRight />
+                  <Image
+                    className="rounded-full bg-transparent"
+                    src={link.icon}
+                    alt="machine icon"
+                  />
                 </div>
                 <span
                   className={`transition duration-300 ${
@@ -256,5 +254,4 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
     </div>
   );
 };
-
 export default ProductLayout;

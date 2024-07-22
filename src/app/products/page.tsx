@@ -16,7 +16,7 @@ import {
   paperlid,
   paperstraw,
 } from "../../../public/assets";
-import {FaCircleNotch } from 'react-icons/fa';
+import { FaCircleNotch } from "react-icons/fa";
 const page: React.FC = () => {
   const cards = [
     {
@@ -30,11 +30,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: papercup,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "Paper Bag",
@@ -47,11 +59,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperbowl,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "Disposable Cup",
@@ -64,11 +88,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperbag1,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "Flexo",
@@ -81,11 +117,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperbowl,
       items: [
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "High-Speed Synchronized" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "High-Speed Synchronized",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System",
+        },
+      ],
     },
     {
       firstname: "High Speed",
@@ -97,11 +145,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperlid,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "High Speed",
@@ -113,11 +173,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperstraw,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "High Speed",
@@ -129,11 +201,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: papercup,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
     {
       firstname: "High Speed",
@@ -145,11 +229,23 @@ const page: React.FC = () => {
       unit: "PCS/MIN",
       icon: paperbowl,
       items: [
-        { icon: <FaCircleNotch className="text-blue-500 text-3xl" />, text: "High-Speed Synchronized Servos" },
-        { icon: <FaCircleNotch className="text-green-500 text-3xl" />, text: "Advanced Sealing Technology" },
-        { icon: <FaCircleNotch className="text-yellow-500 text-3xl" />, text: "Two-Step Curling Process" },
-        { icon: <FaCircleNotch className="text-red-500 text-3xl" />, text: "Comprehensive Control System with PLC + HMI" }
-      ]
+        {
+          icon: <FaCircleNotch className="text-blue-500 text-3xl" />,
+          text: "High-Speed Synchronized Servos",
+        },
+        {
+          icon: <FaCircleNotch className="text-green-500 text-3xl" />,
+          text: "Advanced Sealing Technology",
+        },
+        {
+          icon: <FaCircleNotch className="text-yellow-500 text-3xl" />,
+          text: "Two-Step Curling Process",
+        },
+        {
+          icon: <FaCircleNotch className="text-red-500 text-3xl" />,
+          text: "Comprehensive Control System with PLC + HMI",
+        },
+      ],
     },
   ];
 
