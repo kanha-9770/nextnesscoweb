@@ -44,7 +44,7 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
   return (
     <div
       ref={searchRef}
-      className="relative flex items-center justify-normal text-left"
+      className="relative max-w-screen-2xl flex items-center justify-normal text-left"
     >
       <div className="flex items-center justify-center space-x-4">
         <ImSearch
@@ -58,7 +58,7 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
         </div>
       )}
       {openSearch && (
-        <div className="absolute flex justify-center px-8 items-center right-[-12.4rem] top-10 w-screen max-w-screen-2xl mx-auto">
+        <div className="absolute max-w-screen-2xl flex justify-center px-8 items-center right-[-12.4rem] top-10 w-screen mx-auto">
           <div className="bg-white w-full h-[60vh] p-4 rounded-xl shadow-lg">
             <form className="flex justify-center w-1/2 items-center mx-auto space-x-1">
               <button

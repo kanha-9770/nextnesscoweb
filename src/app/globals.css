@@ -125,3 +125,20 @@ html {
 html::-webkit-scrollbar {
   display: none;
 }
+.scroller {
+  --animation-duration: 20s;
+  --animation-direction: forwards;
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration) linear infinite var(--animation-direction);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

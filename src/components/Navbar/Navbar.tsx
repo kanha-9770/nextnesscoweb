@@ -14,18 +14,17 @@ import ApplicationPage from "../Layout/ApplicationLayout";
 import SolutionLayout from "../Layout/Solution";
 export default function NavbarDemo() {
   return (
-    <div className="relative flex items-center justify-center">
-      <Navbar className="top-2" />
+    <div className="relative max-w-screen-2xl flex items-center justify-center">
+      <Navbar className="top-0" />
     </div>
   );
 }
-
 function Navbar({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn(
-        "fixed top-0 flex flex-row justify-center items-center inset-x-0 mx-auto z-50",
+        "fixed top-0 flex flex-row justify-center max-w-screen-2xl items-center inset-x-0 mx-auto z-50",
         className
       )}
     >
@@ -56,14 +55,10 @@ function Navbar({ className }: { className?: string }) {
             />
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Application">
-            <ApplicationPage/>
+            <ApplicationPage />
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Solution">
-            <SolutionLayout
-              setHoveredItem={() => {}}
-              setHeading={() => {}}
-              setIsVisible={() => {}}
-            />
+            <SolutionLayout />
           </MenuItem>
           <MenuItem setActive={setActive} active={active} item="Support">
             <SupportLayout

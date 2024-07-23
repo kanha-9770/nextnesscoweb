@@ -418,7 +418,7 @@ export const Machines = [
   {
     name: "Paper Flexo Machine",
     image: "paperFlexoMachineImage",
-    mimage:paperFlexoMachineImage,
+    mimage: paperFlexoMachineImage,
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -437,7 +437,7 @@ export const Machines = [
   {
     name: "Paper Flexo Machine",
     image: "paperFlexoMachineImage",
-    mimage:paperFlexoMachineImage,
+    mimage: paperFlexoMachineImage,
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
     introduction:
@@ -459,7 +459,7 @@ export const Machines = [
   {
     name: "Paper Bag Machine1",
     image: "paperBagMachineImage",
-    mimage:paperBagMachineImage,
+    mimage: paperBagMachineImage,
 
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
@@ -500,8 +500,8 @@ export const Machines = [
   },
   {
     name: "Paper Flexo Machine3",
-    image: "paperFlexoMachineImage",  
-      mimage: paperFlexoMachineImage,
+    image: "paperFlexoMachineImage",
+    mimage: paperFlexoMachineImage,
 
     category: "Paper Flexo Machine, All Products",
     icon: "paperlid",
@@ -565,7 +565,7 @@ export const Machines = [
   {
     name: "Paper Bag Machine new2",
     image: "fullyAutomaticBagMachineImage",
-    mimage:fullyAutomaticBagMachineImage,
+    mimage: fullyAutomaticBagMachineImage,
     category: "Paper Bag Machine, All Products",
     icon: "paperbag1",
     introduction:
@@ -724,3 +724,28 @@ export const DataBankItem = [
   { title: "Additional Item 4", image: BookServiceImage },
   { title: "Additional Item 5", image: BookServiceImage },
 ];
+export const data = {
+  heading: "Leading the Way in Food Packaging Machine Manufacturing",
+  description: `At Nessco India, we specialize in manufacturing advanced food packaging machines that set industry standards for quality and innovation. Our state-of-the-art technology ensures efficient and sustainable solutions, meeting the diverse needs of our global clientele. With over 40 years of expertise, we are dedicated to pioneering eco-friendly practices in packaging. Trust us to lead the way in transforming packaging solutions for a greener future.`,
+  stats: {
+    machinesSold: "30000+",
+    readyStockMachines: "3000+"
+  },
+  cards: [
+    {
+      title: "Vision & Mission",
+      image: paperbag1.src,
+            link: "#",
+    },
+    {
+      title: "Our Strength",
+      image: paperBagMachineImage.src,    
+        link: "#",
+    },
+    {
+      title: "People & Culture",
+      image: paperStrawMachine.src,
+      link: "#",
+    },
+  ],
+};

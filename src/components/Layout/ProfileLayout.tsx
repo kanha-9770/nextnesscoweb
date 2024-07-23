@@ -46,7 +46,7 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({
     }, [profileOpen, handleClickOutside]); // Add handleClickOutside to dependencies
 
     return (
-        <div ref={profileRef} className="relative flex items-center justify-normal text-left">
+        <div ref={profileRef} className="relative max-w-screen-2xl flex items-center justify-normal text-left">
             <svg
                 onClick={toggleProfile}
                 xmlns="http://www.w3.org/2000/svg"

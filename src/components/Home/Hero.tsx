@@ -65,10 +65,10 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative bg-[#f5f5f5] flex flex-col items-center  rounded-lg overflow-hidden min-h-screen w-full">
+    <div className="relative bg-[#f5f5f5] max-w-screen-2xl mx-auto m-auto flex flex-col items-center  rounded-lg overflow-hidden min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <div
-          className="relative w-full md:mt-[3.25rem] h-[calc(100vh-150px)]  sm:h-[calc(100vh-220px)] rounded-2xl"
+          className="relative w-full md:mt-[2.8rem] h-[calc(100vh-150px)]  sm:h-[calc(100vh-220px)] rounded-2xl"
           ref={videoRef}
         >
           {isVideoLoaded ? (

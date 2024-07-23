@@ -91,7 +91,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] z-30 md:h-full p-6  rounded-xl flex flex-col justify-center items-center font-medium"
+      className="w-[98vw] max-w-screen-2xl z-30 md:h-full p-6  rounded-xl flex flex-col justify-center items-center font-medium"
     >
       <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
         <div className="flex h-full justify-center items-center w-full md:w-3/4 relative">
@@ -133,13 +133,13 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       {machine.name}
                     </h3>
                     <div className="flex justify-center mt-2 space-x-2">
-                        <a 
+                      <a
                         href={`/products/${machine.name}`}
-                          onClick={() => handleMouseLeave()}
-                          className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
-                        >
-                          Book Now
-                        </a>
+                        onClick={() => handleMouseLeave()}
+                        className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
+                      >
+                        Book Now
+                      </a>
                     </div>
                   </div>
                 ))
@@ -174,8 +174,8 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                         {machine.name}
                       </h1>
                       <div className="flex justify-center pt-4 space-x-4 mt-2">
-                      <a 
-                        href={`/products/${machine.name}`}
+                        <a
+                          href={`/products/${machine.name}`}
                           onClick={() => handleMouseLeave()}
                           className="relative text-white bg-red-500 rounded-3xl px-8 p-1 z-20"
                         >

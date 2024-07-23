@@ -26,7 +26,7 @@ export const MenuItem = ({
  
 
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative">
+    <div onMouseEnter={() => setActive(item)} className="relative max-w-screen-2xl">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer font-montserrat rounded-full w-full text-black hover:opacity-[0.9] dark:text-white"
@@ -42,11 +42,11 @@ export const MenuItem = ({
           {active === item && (
             <>
               {item === "About" && (
-                <div className="absolute top-[calc(100%_+_0.5rem)] transform -translate-x-[25.5%] pr-0 pt-2">
+                <div className="absolute max-w-screen-2xl top-[calc(100%_+_0.5rem)] transform -translate-x-[25.5%] pr-0 pt-2">
                   <motion.div
                     transition={transition}
                     layoutId="active"
-                    className="bg-white dark:bg-black rounded-2xl overflow-hidden border  "
+                    className="bg-white dark:bg-black rounded-2xl overflow-hidden border"
                   >
                     <motion.div layout className="h-full w-max p-2">
                       {children}

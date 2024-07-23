@@ -4,10 +4,9 @@ import { useParams } from "next/navigation";
 import { Machines } from "@/components/Constants/index";
 import { notFound } from "next/navigation";
 import Image from "next/image";
-
+import Machine from "@/pages/machine/MachineHome";
 const MachineDetails = () => {
   const params = useParams();
-
   // Ensure params.id is a string
   const machinename =
     typeof params?.id === "string" ? decodeURIComponent(params.id) : "";
@@ -19,7 +18,6 @@ const MachineDetails = () => {
   if (!machinename) {
     return notFound(); // Handle the case where machinename is not available
   }
-
   // Find the machine that matches the machinename
   const machine = Machines.find((m) => m.name === machinename);
   console.log(machine);
@@ -52,6 +50,7 @@ const MachineDetails = () => {
           <p className="text-gray-700">{machine.related_product}</p>
         </div>
       </div>
+      <Machine/>
     </div>
   );
 };

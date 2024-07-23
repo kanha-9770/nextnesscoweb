@@ -3,7 +3,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette");
 
-const config = {
+const config: Config = {
   darkMode: ["class"],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -88,10 +88,16 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        scroll: {
+          to: {
+            transform: "translate(calc(-50% - 0.5rem))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
     },
   },
@@ -99,7 +105,7 @@ const config = {
     require("tailwindcss-animate"),
     addVariablesForColors,
   ],
-} satisfies Config;
+};
 
 export default config;
 
