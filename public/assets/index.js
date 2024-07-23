@@ -26,6 +26,22 @@ import PCM110WithPLC from "./nav_machine/PCM110WithPLC.png"
 import paperLunchBoxMachine from "./nav_machine/PaperLunchBoxMachine.png"
 import BookServiceImage from "./nav_support/BookService.png"
 import BgMapImage from "./nav_support/BgMapImage.png"
+
+//nav_application
+import img1 from "../../public/assets/nav-application/bg-2.jpg";
+import img2 from "../../public/assets/nav-application/bg3.jpg";
+import img3 from "../../public/assets/nav-application/bg4.jpg";
+import img4 from "../../public/assets/nav-application/image.png";
+import img5 from "../../public/assets/nav-application/Disposable-Spoons-1.jpeg";
+import img6 from "../../public/assets/nav-application/bg-5.jpg";
+import bgimg1 from "../../public/assets/nav-application/outlin.png";
+import bgimg2 from "../../public/assets/nav-application/outlinebowl.jpg";
+import bgimg3 from "../../public/assets/nav-application/outlinespoon.png";
+
+// nav_solution
+import image1 from "../assets/nav_solution/banner.jpg";
+import image2 from "../assets/nav_solution/banner1.jpg"
+
 export {
   paperplate2,
   papercup,
@@ -51,5 +67,16 @@ export {
   paperStrawMachine,
   BookServiceImage,
   paperLunchBoxMachine,
-  BgMapImage
+  BgMapImage,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  bgimg1,
+  bgimg2,
+  bgimg3,
+  image1,
+  image2
 };

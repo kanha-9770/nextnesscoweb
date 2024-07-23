@@ -26,7 +26,7 @@ export const MenuItem = ({
  
 
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative">
+    <div onMouseEnter={() => setActive(item)} className="relative max-w-screen-2xl">
       <motion.p
         transition={{ duration: 0.3 }}
         className="cursor-pointer font-montserrat rounded-full w-full text-black hover:opacity-[0.9] dark:text-white"
