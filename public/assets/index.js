@@ -42,6 +42,20 @@ import bgimg3 from "../../public/assets/nav-application/outlinespoon.png";
 import image1 from "../assets/nav_solution/banner.jpg";
 import image2 from "../assets/nav_solution/banner1.jpg"
 
+// knowmachine
+
+import productImage from '../assets/productbox.avif';
+import machineImage from '../assets/factory.avif';
+import businessImage from '../assets/teamunity.avif';
+import { AiOutlineProduct } from 'react-icons/ai';
+import { LiaToolsSolid } from 'react-icons/lia';
+import { IoBarChartOutline } from 'react-icons/io5';
+
+//newsfeature
+import machines from '../assets/banner.jpg';
+import banner from '../assets/banner2.png';
+import banner2 from '../assets/banner3.jpg';
+
 export {
   paperplate2,
   papercup,
@@ -78,5 +92,14 @@ export {
   bgimg2,
   bgimg3,
   image1,
-  image2
+  image2,
+  productImage,
+  machineImage,
+  businessImage,
+  AiOutlineProduct,
+  LiaToolsSolid,
+  IoBarChartOutline,
+  machines,
+  banner,
+  banner2
 };

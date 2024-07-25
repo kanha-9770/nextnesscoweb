@@ -33,7 +33,16 @@ import {
   bgimg2,
   bgimg3,img4,
   image1,
-  image2
+  image2,
+  productImage,
+  machineImage,
+  businessImage,
+  AiOutlineProduct,
+  LiaToolsSolid,
+  IoBarChartOutline,
+  machines,
+  banner,
+  banner2
 } from "../../../public/assets";
 import { StaticImageData } from "next/image";
 interface Images {
@@ -840,4 +849,51 @@ export const Items:item[] = [
       description: "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. Invest in advanced technology for sustainable, high-volume output.",
     },
   // Add more items as needed
+];
+
+//knowmachine
+interface IconProps {
+  size?: number;
+  className?: string;
+}
+
+interface CardContent {
+  title: string;
+  image: StaticImageData;
+  icon: React.ComponentType<IconProps>;
+}
+
+export const cardContents: CardContent[] = [
+  {
+    title: 'Know Your Product',
+    image: productImage,
+    icon: AiOutlineProduct,
+  },
+  {
+    title: 'Know Your Machine',
+    image: machineImage,
+    icon: LiaToolsSolid,
+  },
+  {
+    title: 'Know Your Business',
+    image: businessImage,
+    icon: IoBarChartOutline,
+  },
+];
+
+//newsfeature
+
+export const newscardcontent = [
+  {
+    image: machines,
+    title: "Revolutionary Speed Unveiled",
+  },
+  {
+    image: banner,
+    title: "Excellence Showcased at DRUPA",
+  },
+  {
+    image: banner2,
+    title: "Excellence Showcased at FOOMA",
+  },
 ];
