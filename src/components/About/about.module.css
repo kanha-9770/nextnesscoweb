@@ -40,3 +40,81 @@
     background-color: #483d73;
     color: white;
   }
+
+  /* founderpage */
+  
+  .card {
+    position: relative;
+    background-color: black;
+    border-radius: 2rem;
+    padding: 0.80rem; /* Adjust as needed */
+    color: white;
+    border: 2px solid;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    background-color: white;
+    color: black;
+    border-color: black;
+  }
+  
+  .imageContainer {
+    position: relative;
+  }
+  
+  .image {
+    border-radius: 2xl;
+    transition: transform 0.3s ease-in-out;
+    border-top-left-radius: 20px ;
+    border-top-right-radius: 20px ;
+    
+  }
+  
+  .icons {
+    position: absolute;
+    top: 1rem; /* Adjust as needed */
+    right: 1.20rem; /* Adjust as needed */
+    color: black;
+    font-size: 1.27rem; /* Adjust as needed */
+    cursor: pointer;
+  }
+  
+  .content {
+    position: relative;
+  
+  }
+  
+  .nameTitle {
+    font-size: 1.100rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    
+  }
+  
+  .linkedinIcon {
+    margin-left: 0.5rem;
+  }
+  
+  .descriptionContainer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    color: black;
+    overflow: hidden;
+    height: 50%; /* Adjust height based on how much of the image you want to cover */
+    transform: translateY(150%);
+    transition: transform 0.3s ease-out;
+  }
+  
+  .card:hover .descriptionContainer {
+    transform: translateY(0);
+    height: 250%;
+  }
+  
+  
+  
