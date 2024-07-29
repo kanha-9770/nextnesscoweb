@@ -1,0 +1,31 @@
+/* Add these to your global CSS or a module CSS file */
+@keyframes slideUp {
+    from {
+      transform: translateY(90%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(10);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      transform: translateY(10);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+  }
+  
+  .slide-in {
+    animation: slideUp 0 forwards;
+  }
+  
+  .slide-out {
+    animation: slideOut 0 forwards;
+  }
+  
