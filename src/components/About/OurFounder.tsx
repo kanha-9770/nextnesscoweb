@@ -1,20 +1,29 @@
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
-import React from 'react';
 import { GrAddCircle } from 'react-icons/gr';
-import styles from './about.module.css'
+import { ImCross } from 'react-icons/im';
+import styles from './about.module.css';
+import { founders } from '../Constants/About/OurFounders-page'; // Import the dynamic content
 
 interface FounderProps {
-    name: string;
-    title: string;
-    description: string;
-    imageSrc: string;
-    linkedInUrl: string;
-  }
+  name: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  linkedInUrl: string;
+}
 
-const FounderCard:React.FC<FounderProps>= ({ name, title, imageSrc, linkedInUrl,description }) => (
-    <div className={styles.card}>
+interface CardProps {
+  handleCloseModal: () => void;
+  founderData: FounderProps;
+}
+
+const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ name, title, imageSrc, linkedInUrl, description, onOpenModal }) => (
+  <div className={styles.card}>
     {/* Image container */}
-    <div className={styles.imageContainer} >
+    <div className={styles.imageContainer}>
       <Image
         className={styles.image}
         src={imageSrc}
@@ -23,7 +32,7 @@ const FounderCard:React.FC<FounderProps>= ({ name, title, imageSrc, linkedInUrl,
         height={400}
       />
       <div className={styles.icons}>
-        <GrAddCircle />
+        <GrAddCircle onClick={onOpenModal} />
       </div>
     </div>
 
@@ -39,44 +48,74 @@ const FounderCard:React.FC<FounderProps>= ({ name, title, imageSrc, linkedInUrl,
 
       {/* Hidden box for description */}
       <div className={styles.descriptionContainer}>
-      <h3 className='font-bold font-montserrat text-lg mt-1'>{name} </h3>
-      <p className='font-montserrat mb-3'>{title}</p>
+        <h3 className='font-bold font-montserrat text-lg mt-1'>{name}</h3>
+        <p className='font-montserrat mb-3'>{title}</p>
         <p className="text-black font-montserrat leading-5">{description}</p>
       </div>
     </div>
   </div>
-  
 );
 
-const Founders = () => (
-  <div className="bg-black text-white py-16 min-h-screen">
-    <h2 className="text-center text-5xl font-montserrat mb-8">
-      Our <span className="text-red-600">Founders</span>
-    </h2>
-    <div className="flex justify-center  space-x-8 w-5/6 ml-28">
-      <FounderCard
-        name="Mr Harshit Agarwal"
-        title="Director and CEO"
-         description="We innovate with sustainability at our core, transforming challenges into eco-friendly solutions for a better future."
-       imageSrc="/assets/about/nessco-team.webp"
-        linkedInUrl="#"
-      />
-      <FounderCard
-        name="Mr Gopal Lal Gupta"
-        title="Director and CEO"
-         description="We innovate with sustainability at our core, transforming challenges into eco-friendly solutions for a better future."
-       imageSrc="/assets/about/nessco-team.webp"
-        linkedInUrl="#"
-      />
-      <FounderCard
-        name="Mr Yogesh Agarwal"
-        title="Director and CEO"
-         description="We innovate with sustainability at our core, transforming challenges into eco-friendly solutions for a better future."
-       imageSrc="/assets/about/nessco-team.webp"
-        linkedInUrl="#"
-      />
+const Card: React.FC<CardProps> = ({ handleCloseModal, founderData }) => {
+  return (
+    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-2xl shadow-md relative bottom-5 text-black">
+      <div className="absolute top-4 left-[97%] mt-2">
+        <ImCross
+          size={15}
+          className="cursor-pointer text-black"
+          onClick={handleCloseModal}
+        />
+      </div>
+      {/* Display founder data */}
+      <div className="p-4">
+        <h3 className='text-xl font-bold'>{founderData.name}</h3>
+        <p className='text-lg'>{founderData.title}</p>
+        <p>{founderData.description}</p>
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
+const Founders = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedFounder, setSelectedFounder] = useState<FounderProps | null>(null);
+
+  const openModal = (founder: FounderProps) => {
+    setSelectedFounder(founder);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedFounder(null);
+  };
+
+  return (
+    <div className="bg-black text-white py-16 min-h-screen">
+      <h2 className="text-center text-5xl font-montserrat mb-8 mt-5">
+        Our <span className="text-red-600">Founders</span>
+      </h2>
+      <div className="flex justify-center space-x-8 w-5/6 ml-28">
+        {founders.map((founder, index) => (
+          <FounderCard
+            key={index}
+            {...founder}
+            onOpenModal={() => openModal(founder)}
+          />
+        ))}
+      </div>
+
+      {/* Modal */}
+      {isModalOpen && selectedFounder && (
+        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
+          <Card
+            handleCloseModal={closeModal}
+            founderData={selectedFounder}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default Founders;

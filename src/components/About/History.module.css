@@ -1,31 +1,39 @@
-/* Add these to your global CSS or a module CSS file */
-@keyframes slideUp {
-    from {
-      transform: translateY(90%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(10);
-      opacity: 1;
-    }
-  }
+/* History.module.css */
+
+.year-animation {
+  display: flex;
+  font-size: 9rem; /* Adjust as needed */
+}
+
+.year-animation__prefix {
+  display: inline-block;
+  position: fixed;
+  white-space: nowrap;
+  z-index: 1;
   
-  @keyframes slideOut {
-    from {
-      transform: translateY(10);
-      opacity: 1;
-    }
-    to {
-      transform: translateY(-100%);
-      opacity: 0;
-    }
-  }
-  
-  .slide-in {
-    animation: slideUp 0 forwards;
-  }
-  
-  .slide-out {
-    animation: slideOut 0 forwards;
-  }
-  
+}
+
+.year-animation__suffix {
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  left:9rem;
+}
+
+.year-animation__suffix--changing {
+  transition: transform 0.4s;
+}
+
+.year-animation__suffix--active {
+  transform: translateY(100%);
+}
+
+.year-animation__suffix--hidden {
+  transform: translateY(100%);
+  opacity: 100;
+}
+
+.year-animation__suffix--visible {
+  opacity: 100;
+  transform: translateY(0);
+}

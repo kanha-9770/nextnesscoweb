@@ -897,3 +897,31 @@ export const newscardcontent = [
     title: "Excellence Showcased at FOOMA",
   },
 ];
+
+export interface TimelineEvent {
+  year: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export const events: TimelineEvent[] = [
+  {
+    year: '1990',
+    title: 'Our History',
+    description: 'Nessco India, founded in 1980, has evolved into a prominent leader in the manufacturing industry. Starting as a small enterprise, the company focused on producing high-quality packaging machinery and equipment. Over the decades, Nessco India has expanded its operations, embracing technological advancements and diversifying its product portfolio to meet the changing needs of the market.',
+    image: '/assets/about/nessco-team.webp',
+  },
+  {
+    year: '2000',
+    title: 'Expansion',
+    description: 'Nessco India, founded in 1980, has evolved into a prominent leader in the manufacturing industry. Starting as a small enterprise, the company focused on producing high-quality packaging machinery and equipment. Over the decades, Nessco India has expanded its operations, embracing technological advancements and diversifying its product portfolio to meet the changing needs of the market.',
+    image: '/assets/about/nessco-team.webp',
+  },
+  {
+    year: '2010',
+    title: 'Technological Advancements',
+    description: 'Nessco India, founded in 1980, has evolved into a prominent leader in the manufacturing industry. Starting as a small enterprise, the company focused on producing high-quality packaging machinery and equipment. Over the decades, Nessco India has expanded its operations, embracing technological advancements and diversifying its product portfolio to meet the changing needs of the market.',
+    image: '/assets/about/nessco-team.webp',
+  },
+];

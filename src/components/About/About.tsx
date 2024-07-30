@@ -1,17 +1,14 @@
 "use client";
 
 import Head from 'next/head';
-import { useState,useEffect } from 'react';
-import cupdis from '../../../public/assets/coffee-cup.png'
-import userset from '../../../public/assets/management-consulting.png'
-import sustainable from '../../../public/assets/save-nature - Copy.png'
+import { useState, useEffect } from 'react';
 import { gsap } from 'gsap/gsap-core';
 import Sustainable from './Sustainable';
+import { sections } from '../Constants/About/About-page'; // Import the sections array
 
 const videoSources = [
   { src: 'video/bg.mp4', type: 'video/mp4' },
   { src: 'video/bg2.mp4', type: 'video/mp4' },
- 
 ];
 
 const About = () => {
@@ -25,15 +22,14 @@ const About = () => {
     return () => clearInterval(interval);
   }, []);
 
-  
   return (
     <>
       <Head>
         <title>About Us</title>
       </Head>
-      <div className="h-screen ">
+      <div className="h-screen">
         <div className="inset-0 overflow-hidden">
-        {videoSources.map((video, index) => (
+          {videoSources.map((video, index) => (
             <video
               key={index}
               className={`absolute inset-0 min-h-full min-w-full object-cover transition-opacity duration-75 ${
@@ -52,28 +48,30 @@ const About = () => {
           <h1 className="text-5xl font-montserrat">About <span className="text-red-600">Us</span></h1>
           <p className="mt-4 text-lg font-montserrat">Begins and End with Customer's Smile</p>
         </div>
-        <div className="relative z-10 flex flex-col items-start justify-start text-left text-white mt-20 px-8">
-          <h2 className="text-5xl font-montserrat">Excellence in</h2>
-          <h2 className="text-5xl font-bold font-style: italic mt-2">Innovation and <span className="text-red-600">Quality</span></h2>
-        </div>
-        <div className="relative z-10 w-full flex justify-center space-x-10 text-white top-36">
-          <div className="flex flex-col items-center">
-            <img src={cupdis.src} alt="Food Packaging" className="h-12 mb-2 filter invert"/>
-            <p className='text-center text-sm'>Food Packaging <br/>Machinery</p>
+        {sections.map((section, sectionIndex) => (
+          <div key={sectionIndex} className="relative z-10 flex flex-col items-start justify-start text-left text-white mt-20 px-8">
+            <h2 className="text-5xl font-montserrat">{section.title}</h2>
+            <h2 className="text-5xl font-bold font-style: italic mt-2">{section.subtitle} <span className="text-red-600">{section.highlight}</span></h2>
+            <div className="relative z-10 w-full flex justify-center space-x-10 text-white top-36">
+              {section.content.map((item, itemIndex) => (
+                <div key={itemIndex} className="flex flex-col items-center text-center">
+                  <img src={item.image} alt={item.alt} className="h-12 mb-2 filter invert" />
+                  <div className='text-center'>
+  <p className='text-sm w-[9rem] '>
+    {item.description.split(' ').map((word, i) => (
+      i > 0 && word.toLowerCase() === 'of' ? <><br key={i}/>{word}</> : word
+    )).reduce<React.ReactNode[]>((prev, curr) => prev.concat(' ', curr), [])}
+  </p>
+</div>
+
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-col items-center">
-            <img src={userset.src} alt="Experience" className="h-12 mb-2 filter invert"/>
-            <p className='text-center text-sm'>40+ Years of <br/>Experience</p>
-          </div>
-          <div className="flex flex-col items-center ">
-            <img src={sustainable.src} alt="Sustainable" className="h-12 mb-2 filter invert"/>
-            <p className='text-center text-sm'>Sustainable <br/> Packaging Solutions</p>
-          </div>
-        </div>
-        
+        ))}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default About;

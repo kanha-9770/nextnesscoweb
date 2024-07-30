@@ -121,7 +121,7 @@
   /* styles.css */
 
   .imageScaleUp {
-    animation: scaleUp 25s ease-in-out ;
+    animation: scaleUp 25s ease-in-out infinite ;
   }
 
   .imageTranslateUp {
@@ -131,7 +131,7 @@
   @keyframes scaleUp {
     /* starting */
     0% {
-      transform: scale(0.80);  
+      transform: scale(0.90);  
     }
     /* scaleup */
     50% {
