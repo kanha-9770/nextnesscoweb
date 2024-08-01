@@ -6,8 +6,8 @@ import sustainable from '../../../../public/assets/save-nature - Copy.png';
 
 export const sections = [
   {
-    title: "Excellence in",
-    subtitle: "Innovation and",
+    title: "Excellence In ",
+    subtitle: "Innovation &",
     highlight: "Quality",
     content: [
       { image: cupdis.src, alt: "Food Packaging", description: "Food Packaging Machinery" },

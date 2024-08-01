@@ -23,15 +23,15 @@ const AboutLayout = () => {
     }
   };
 
-  const handleWheel = (e: WheelEvent) => {
-    if (e.deltaY > 0) {
-      scrollDown();
-    } else {
-      scrollUp();
-    }
-  };
-
   useEffect(() => {
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY > 0) {
+        scrollDown();
+      } else {
+        scrollUp();
+      }
+    };
+
     const carouselElement = carouselRef.current;
     if (carouselElement) {
       gsap.fromTo(

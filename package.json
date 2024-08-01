@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/alex-brush": "^5.0.20",
     "@fontsource/montserrat": "^5.0.18",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-label": "^2.1.0",
@@ -25,7 +26,8 @@
     "react-intersection-observer": "^9.13.0",
     "sharp": "^0.33.4",
     "tailwind-merge": "^2.4.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "typeface-alex-brush": "^1.1.13"
   },
   "devDependencies": {
     "@types/node": "^20",

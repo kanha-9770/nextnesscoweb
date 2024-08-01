@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar/Navbar';
 import "@fontsource/montserrat"; // Defaults to weight 400
+import "@fontsource/alex-brush";
 
 const inter = Inter({ subsets: ['latin'] });
 

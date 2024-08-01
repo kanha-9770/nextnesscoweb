@@ -3,6 +3,7 @@
 import { useState, useEffect ,useRef} from 'react';
 import Image from 'next/image';
 import styles from './History.module.css'
+import { FaRegCircle } from "react-icons/fa6";
 
 interface TimelineEvent {
   year: string;
@@ -61,34 +62,12 @@ const events: TimelineEvent[] = [
     image: '/assets/about/nessco-team.webp',
   },
 ];
+
 const Timeline = () => {
   const [currentEvent, setCurrentEvent] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
-  const yearSuffixRefs = useRef<(HTMLDivElement | null)[]>([]);
-  const descriptionRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-  const imageRefs = useRef<(HTMLImageElement | null)[]>([]);
-  const yearPrefix = useRef<string>('');
-  const [previousYear, setPreviousYear] = useState(events[0].year);
+  const [prefix, setPrefix] = useState('19'); // Default prefix for the initial year
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (containerRef.current) {
-        const scrollTop = containerRef.current.scrollTop;
-        const sectionHeight = window.innerHeight;
-        const index = Math.min(Math.floor(scrollTop / sectionHeight), events.length - 1);
-
-        if (currentEvent !== index) {
-          setCurrentEvent(index);
-        }
-      }
-    };
-
-    containerRef.current?.addEventListener('scroll', handleScroll);
-
-    return () => {
-      containerRef.current?.removeEventListener('scroll', handleScroll);
-    };
-  }, [currentEvent]);
   useEffect(() => {
     const handleScroll = () => {
       if (containerRef.current) {
@@ -111,70 +90,58 @@ const Timeline = () => {
 
   useEffect(() => {
     const currentYear = events[currentEvent].year;
-    const prevYear = events[currentEvent === 0 ? 0 : currentEvent - 1].year;
-
-    if (currentYear.slice(0, 2) !== prevYear.slice(0, 2)) {
-      setPreviousYear(prevYear);
-      yearPrefix.current = currentYear.slice(0, 2);
-    }
+    setPrefix(currentYear.slice(0, 2));
   }, [currentEvent]);
 
   return (
-    <div className="relative h-screen w-full">
-      <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: 'url(/assets/about/nesscobg.avif)' }} />
-      <div className="absolute top-16 w-full text-center">
-        <h2 className="text-white text-6xl font-montserrat mr-20">Our <span className='text-red-500'> History</span></h2>
+    <div className={`h-screen w-full relative ${styles['hide-scrollbar']}`}>
+      <div className="absolute inset-0 bg-cover bg-center opacity-10 bg-black"  />
+      <div className="sticky z-50 bg-black top-[9%] w-[95%] text-center">
+        <h2 className="text-white text-6xl font-montserrat ml-10">Our <span className='text-red-500'> History</span></h2>
       </div>
-      <div className="relative h-screen w-full overflow-y-scroll" ref={containerRef}>
+      <div className={`h-screen top-[5rem] w-full overflow-y-scroll ${styles['hide-scrollbar']}`} ref={containerRef}>
         <div className="flex flex-col h-[300vh]">
           {events.map((event, index) => (
             <div
               key={index}
-              className={`flex items-center justify-center h-screen w-full transition-opacity duration-500 ${currentEvent === index ? 'opacity-100' : 'opacity-0'}`}
+              className={`flex items-center justify-center h-screen w-full transition-opacity  ${currentEvent === index ? 'opacity-100' : 'opacity-100'}`}
             >
-              <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-6xl mx-auto text-white p-10 rounded-2xl">
-                <div className="flex flex-col items-start justify-center w-full md:w-1/2 pr-10 mt-16">
-                  <div className={`${styles['year-animation']}`}>
-                    <div className={`${styles['year-animation__prefix']}`}>
-                      {event.year.slice(0, 2)}
+              <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-full mx-auto text-white p-10 rounded-2xl ">
+                
+                <div className="flex flex-col items-start justify-center w-full md:w-1/2 pr-10 ">
+                  <div className={styles['year-animation']}>
+                    <div className={styles['year-animation__prefix']}>
+                      {prefix}
                     </div>
+                    <div className="relative">
+          <div className="absolute top-[-10rem] left-[6rem] text-thin ">
+            <FaRegCircle size={30} />
+          </div>
+        </div>
+                    <div className={styles['year-animation__separator']} />
                     <div
-                      className={`${styles['year-animation__suffix']} ${currentEvent === index ? styles['year-animation__suffix--changing'] : ''}`}
-                      ref={(el) => {
-                        if (el) {
-                          yearSuffixRefs.current[index] = el;
-                        }
-                      }}
+                      className={styles['year-animation__suffix']}
                     >
                       {event.year.slice(2)}
                     </div>
                   </div>
-                  <p
-                    className={`mt-4 w-[80%] font-montserrat text-left text-justify ml-36 ${styles['slide-in']}`}
-                    ref={(el) => {
-                      if (el) {
-                        descriptionRefs.current[index] = el;
-                      }
-                    }}
-                  >
-                    {event.description}
-                  </p>
+                 
                 </div>
-                <div className="w-full md:w-1/2 pl-10 mt-5">
+                <div className="w-full h-full overflow-hidden   ml-10">
                   <Image
                     src={event.image}
                     alt={event.year}
-                    width={410}
-                    height={310}
+                    width={400}
+                    height={350}
                     objectFit="cover"
-                    className={`rounded-2xl ml-16 mt-28 ${styles['image-animation']}`}
-                    ref={(el) => {
-                      if (el) {
-                        imageRefs.current[index] = el;
-                      }
-                    }}
+                    className={`rounded-2xl mt-28 p-1  ${styles['image-animation']}`}
                   />
                 </div>
+                <p
+                    className={`mt-36 w-[80%] font-montserrat text-left text-justify ml-10 ${styles['slide-in']}`}
+                  >
+                    {event.description}
+                  </p>
               </div>
             </div>
           ))}

@@ -24,6 +24,7 @@ const config = {
       fontFamily: {
         "montserrat": ["Montserrat", "Poppins"],
         poppins: ['Poppins', 'sans-serif'],
+        alexBrush: ['Alex Brush', 'Poppins'],
       },
       fontSize: {
         16: "16px",

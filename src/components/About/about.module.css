@@ -46,7 +46,7 @@
   .card {
     position: relative;
     background-color: black;
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 0.80rem; /* Adjust as needed */
     color: white;
     border: 2px solid;
@@ -67,8 +67,8 @@
   .image {
     border-radius: 2xl;
     transition: transform 0.3s ease-in-out;
-    border-top-left-radius: 20px ;
-    border-top-right-radius: 20px ;
+    border-top-left-radius: 5px ;
+    border-top-right-radius: 5px ;
     
   }
   
@@ -139,7 +139,7 @@
     }
     /* originalsize */
     100% {
-      transform: scale(1);  
+      transform: scale(0.90);  
     }
   }
 

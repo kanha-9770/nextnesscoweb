@@ -7,12 +7,26 @@ import Grid from "@/components/About/Grid";
 import OurHistory from "@/components/About/OurHistory";
 import { events } from "@/components/Constants";
 
+import AboutD from "@/components/Aboutdemo/AboutD";
+import SustainableD from "@/components/Aboutdemo/SustainableD";
+import OurStoryD from "@/components/Aboutdemo/OurstoryD";
+
 export default function about() {
 
 
   return (
-    <main className="bg-black">
-     <section id="about" className="">
+    <main className="bg-black ">
+
+<AboutD />
+<SustainableD/>
+<OurStoryD/>
+<Founders/> 
+<TeamPage/>
+
+
+
+      
+     {/* <section id="about" className=" relative h-screen">
         <About />
       </section>
        <section id="sustainable" className="relative h-screen">
@@ -27,17 +41,19 @@ export default function about() {
         <Founders/>
       </section>
        
+
         <section id="our-story" className="relative">
         <Grid/>
-      </section>
+      </section> */}
       
-      <section id="team" className="relative">
-      <TeamPage/>
-      </section>
+      
 
        {/* <section id="team" className="relative">
       <OurHistory />
       </section>  */}
+      {/* <section id="team" className="relative">
+      <TeamPage/>
+      </section> */}
       
     
 

@@ -31,9 +31,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
         width={300}
         height={400}
       />
-      <div className={styles.icons}>
-        <GrAddCircle onClick={onOpenModal} />
-      </div>
+    
     </div>
 
     {/* Content */}
@@ -41,7 +39,14 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
       <h3 className={`${styles.nameTitle} mt-5`}>
         {name}
         <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.linkedinIcon}>
-          <img src="/assets/about/linkedin.png" alt="LinkedIn" className="inline-block w-5 h-5" />
+        <Image
+            src="/assets/about/linkedin.png"
+            alt="LinkedIn"
+            width={20}
+            height={20}
+            className="inline-block"
+          />
+
         </a>
       </h3>
       <p className='pb-3'>{title}</p>
@@ -58,14 +63,8 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
 const Card: React.FC<CardProps> = ({ handleCloseModal, founderData }) => {
   return (
-    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-2xl shadow-md relative bottom-5 text-black">
-      <div className="absolute top-4 left-[97%] mt-2">
-        <ImCross
-          size={15}
-          className="cursor-pointer text-black"
-          onClick={handleCloseModal}
-        />
-      </div>
+    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black">
+      
       {/* Display founder data */}
       <div className="p-4">
         <h3 className='text-xl font-bold'>{founderData.name}</h3>
@@ -93,7 +92,7 @@ const Founders = () => {
   return (
     <div className="bg-black text-white py-16 min-h-screen">
       <h2 className="text-center text-5xl font-montserrat mb-8 mt-5">
-        Our <span className="text-red-600">Founders</span>
+        Our Founders
       </h2>
       <div className="flex justify-center space-x-8 w-5/6 ml-28">
         {founders.map((founder, index) => (
@@ -105,15 +104,7 @@ const Founders = () => {
         ))}
       </div>
 
-      {/* Modal */}
-      {isModalOpen && selectedFounder && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center z-50">
-          <Card
-            handleCloseModal={closeModal}
-            founderData={selectedFounder}
-          />
-        </div>
-      )}
+    
     </div>
   );
 };

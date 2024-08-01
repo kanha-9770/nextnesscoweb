@@ -33,7 +33,7 @@ const OurStory = () => {
                   <>
                     {paragraph.split(highlightedText)[0]}
                     <Link href={'/'}>
-                      <span className='text-[#483d73]'>{highlightedText}</span>
+                      <span className='text-red-500'>{highlightedText}</span>
                     </Link>
                     {paragraph.split(highlightedText)[1]}
                   </>

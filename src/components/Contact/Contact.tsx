@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SignupFormDemo } from "./SignupFormDemo";
 
@@ -22,21 +22,18 @@ const ContactForm: React.FC<ContactFormProps> = ({
 }) => {
   const contactRef = useRef<HTMLDivElement>(null);
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      contactRef.current &&
-      !contactRef.current.contains(event.target as Node)
-    ) {
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (contactRef.current && !contactRef.current.contains(event.target as Node)) {
       setContactFormVisible(false);
     }
-  };
+  }, [setContactFormVisible]);
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [handleClickOutside]);
 
   const toggleContactForm = () => {
     setContactFormVisible(!isContactFormVisible);
@@ -44,6 +41,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     setOpenSearch(false);
     setProfileOpen(false);
   };
+
   const transition = {
     type: "spring",
     mass: 0.5,
@@ -52,7 +50,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     restDelta: 0.001,
     restSpeed: 0.001,
   };
-  
+
   return (
     <div>
       <button

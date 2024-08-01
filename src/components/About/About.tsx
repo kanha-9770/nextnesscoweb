@@ -1,6 +1,7 @@
 "use client";
 
 import Head from 'next/head';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { gsap } from 'gsap/gsap-core';
 import Sustainable from './Sustainable';
@@ -42,7 +43,7 @@ const About = () => {
               <source src={video.src} type={video.type} />
             </video>
           ))}
-          <div className="absolute inset-0 bg-black opacity-50"></div>
+          <div className="absolute inset-0 bg-black opacity-50 "></div>
         </div>
         <div className="relative z-10 flex flex-col items-center justify-center text-center text-white mt-20">
           <h1 className="text-5xl font-montserrat">About <span className="text-red-600">Us</span></h1>
@@ -52,12 +53,18 @@ const About = () => {
           <div key={sectionIndex} className="relative z-10 flex flex-col items-start justify-start text-left text-white mt-20 px-8">
             <h2 className="text-5xl font-montserrat">{section.title}</h2>
             <h2 className="text-5xl font-bold font-style: italic mt-2">{section.subtitle} <span className="text-red-600">{section.highlight}</span></h2>
-            <div className="relative z-10 w-full flex justify-center space-x-10 text-white top-36">
+            <div className="relative z-10 w-full flex justify-center space-x-10 text-white ">
               {section.content.map((item, itemIndex) => (
-                <div key={itemIndex} className="flex flex-col items-center text-center">
-                  <img src={item.image} alt={item.alt} className="h-12 mb-2 filter invert" />
+                <div key={itemIndex} className="flex flex-col items-center text-center mt-48 relative ">
+                 <Image 
+                    src={item.image} 
+                    alt={item.alt} 
+                    width={48} // set appropriate width
+                    height={48} // set appropriate height
+                    className="h-12  filter invert" 
+                  />
                   <div className='text-center'>
-  <p className='text-sm w-[9rem] '>
+  <p className='text-sm w-[9rem] mb-5 '>
     {item.description.split(' ').map((word, i) => (
       i > 0 && word.toLowerCase() === 'of' ? <><br key={i}/>{word}</> : word
     )).reduce<React.ReactNode[]>((prev, curr) => prev.concat(' ', curr), [])}
