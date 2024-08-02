@@ -91,7 +91,7 @@ const Founders = () => {
 
   return (
     <div className="bg-black text-white py-16 min-h-screen">
-      <h2 className="text-center text-5xl font-montserrat mb-8 mt-5">
+      <h2 className="text-center text-5xl font-montserrat mb-8 mt-28">
         Our Founders
       </h2>
       <div className="flex justify-center space-x-8 w-5/6 ml-28">

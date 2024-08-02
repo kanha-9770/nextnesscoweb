@@ -10,7 +10,7 @@ export const ourStoryContent = {
     image: {
       src: '/assets/machineman.jpeg',
       alt: "Our Story Image",
-      width: 910,
+      width: 820,
       height: 410
     }
   };

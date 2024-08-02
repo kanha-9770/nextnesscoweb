@@ -15,7 +15,7 @@ export default function about() {
 
 
   return (
-    <main className="bg-black ">
+    <main className="bg-black  ">
 
 <AboutD />
 <SustainableD/>
@@ -24,36 +24,42 @@ export default function about() {
 <TeamPage/>
 
 
+<section id="team" className="relative p-20">
+      <OurHistory />
+      </section> 
+
+
 
       
      {/* <section id="about" className=" relative h-screen">
         <About />
       </section>
-       <section id="sustainable" className="relative h-screen">
+       <section id="sustainable" className="relative ">
         <Sustainable />
       </section>
       
-      <section id="our-story" className="relative">
+      <section id="our-story" className="relative ">
         <OurStory />
       </section>
      
-      <section id="our-story" className="relative">
+      <section id="our-story" className=" z-50">
         <Founders/>
       </section>
+      */}
        
-
-        <section id="our-story" className="relative">
+        {/* <section id="our-story" className="relative z-20">
         <Grid/>
-      </section> */}
+      </section> 
       
       
 
-       {/* <section id="team" className="relative">
+       <section id="team" className="relative p-20">
       <OurHistory />
-      </section>  */}
-      {/* <section id="team" className="relative">
+      </section> 
+     
+      <section id="team" className="relative z-10">
       <TeamPage/>
-      </section> */}
+      </section>  */}
       
     
 

@@ -11,7 +11,7 @@ export default function Home() {
       {/* <Hero/> */}
       {/* <SignupFormDemo/> */}
        {/* <Knowmachine/> */}
-      <NewsFeature/> 
+      {/* <NewsFeature/>  */}
        {/* <Newsblog/> */}
 
     </main>

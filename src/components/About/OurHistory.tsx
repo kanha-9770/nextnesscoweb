@@ -94,10 +94,10 @@ const Timeline = () => {
   }, [currentEvent]);
 
   return (
-    <div className={`h-screen w-full relative ${styles['hide-scrollbar']}`}>
+    <div className={`h-screen w-full relative bottom-16 ${styles['hide-scrollbar']}`}>
       <div className="absolute inset-0 bg-cover bg-center opacity-10 bg-black"  />
-      <div className="sticky z-50 bg-black top-[9%] w-[95%] text-center">
-        <h2 className="text-white text-6xl font-montserrat ml-10">Our <span className='text-red-500'> History</span></h2>
+      <div className="sticky z-50 bg-black -mt-[2rem] w-full text-center mr-5">
+        <h2 className="text-white text-6xl font-montserrat ml-10  ">Our <span className='text-red-500'> History</span></h2>
       </div>
       <div className={`h-screen top-[5rem] w-full overflow-y-scroll ${styles['hide-scrollbar']}`} ref={containerRef}>
         <div className="flex flex-col h-[300vh]">
@@ -106,7 +106,7 @@ const Timeline = () => {
               key={index}
               className={`flex items-center justify-center h-screen w-full transition-opacity  ${currentEvent === index ? 'opacity-100' : 'opacity-100'}`}
             >
-              <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-full mx-auto text-white p-10 rounded-2xl ">
+              <div className="relative flex flex-col md:flex-row items-center justify-between w-full max-w-6xl h-full mx-auto text-white p-10 rounded-2xl  ">
                 
                 <div className="flex flex-col items-start justify-center w-full md:w-1/2 pr-10 ">
                   <div className={styles['year-animation']}>
@@ -114,8 +114,8 @@ const Timeline = () => {
                       {prefix}
                     </div>
                     <div className="relative">
-          <div className="absolute top-[-10rem] left-[6rem] text-thin ">
-            <FaRegCircle size={30} />
+          <div className="absolute top-[-4rem] left-[6rem] text-thin ">
+            <FaRegCircle size={27} />
           </div>
         </div>
                     <div className={styles['year-animation__separator']} />
@@ -127,18 +127,18 @@ const Timeline = () => {
                   </div>
                  
                 </div>
-                <div className="w-full h-full overflow-hidden   ml-10">
+                <div className="w-full h-full overflow-hidden mt-5 ml-10 ">
                   <Image
                     src={event.image}
                     alt={event.year}
                     width={400}
                     height={350}
                     objectFit="cover"
-                    className={`rounded-2xl mt-28 p-1  ${styles['image-animation']}`}
+                    className={`rounded-2xl p-1 mt-20   ${styles['image-animation']}`}
                   />
                 </div>
                 <p
-                    className={`mt-36 w-[80%] font-montserrat text-left text-justify ml-10 ${styles['slide-in']}`}
+                    className={`mt-28 w-[80%]  font-montserrat text-left text-justify ml-10 ${styles['slide-in']}`}
                   >
                     {event.description}
                   </p>

@@ -34,7 +34,7 @@ const SustainableD = () => {
         </div>
        
 
-        <div className="relative z-50 flex flex-col items-center justify-center text-center text-white min-h-screen">
+        <div className="relative  flex flex-col items-center justify-center text-center text-white min-h-screen">
           <h1 className="text-5xl font-montserrat font-bold ">
             {heading} <span className="text-green-500">{highlight}</span>
           </h1>
