@@ -24,9 +24,9 @@ export default function about() {
 <TeamPage/>
 
 
-<section id="team" className="relative p-20">
+{/* <section id="team" className="relative p-20">
       <OurHistory />
-      </section> 
+      </section>  */}
 
 
 
@@ -61,7 +61,10 @@ export default function about() {
       <TeamPage/>
       </section>  */}
       
-    
+      {/* <section id="team" className="relative p-20">
+      <OurHistory />
+      </section> 
+     */}
 
     
     </main>

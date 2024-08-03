@@ -27,7 +27,7 @@ const AboutD = () => {
       <Head>
         <title>About Us</title>
       </Head>
-      <div className="h-screen bg-black">
+      <div className="h-screen bg-black w-screen">
         <div className="inset-0 overflow-hidden space-x-6 ">
         
             <video
